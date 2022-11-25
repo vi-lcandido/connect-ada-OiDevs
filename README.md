@@ -49,6 +49,7 @@ Ferramentas utilizadas no desenvolvimento do projeto:
 - CSS
 - Bootstrap
 - JavaScript
+- Programação Orientada a Objetos
 
 ---
 
