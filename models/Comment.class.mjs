@@ -6,13 +6,25 @@ class Comment {
   #idAuthor;
   #idPost;
   #content;
+  #userImg;
 
-  constructor(idAuthor, idPost, content) {
+  constructor(idAuthor, idPost, content, userImg) {
     this.#idComment = Functions.createRandomId();
     this.#idAuthor = idAuthor;
     this.#idPost = idPost;
     this.#content = content;
-    database.addComment(this);
+    this.#userImg = userImg;
+    database.addComment(this.commentObject);
+  }
+
+  get commentObject() {
+    return {
+      idComment: this.#idComment,
+      idAuthor: this.#idAuthor,
+      idPost: this.#idPost,
+      content: this.#content,
+      userImg: this.#userImg,
+    };
   }
 
   get idComment() {
@@ -31,11 +43,15 @@ class Comment {
     return this.#content;
   }
 
+  get userImg() {
+    return this.#userImg;
+  }
+
   set content(newContent) {
     this.#content = newContent;
   }
 
-  deleteComment(){
+  deleteComment() {
     database.removeComment(this.#idComment);
   }
 }
