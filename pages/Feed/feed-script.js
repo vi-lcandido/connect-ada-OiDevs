@@ -5,8 +5,6 @@ import database from "../../models/DataBase.class.mjs";
 import CommentCardView from "../../components/CommentCard.js";
 import Comment from "../../models/Comment.class.mjs";
 
-database.initialization();
-
 const currentImg = `${database.currentUserInSession.image}`;
 
 //renderizando header
@@ -24,6 +22,14 @@ header.addProfileDropdownLink("Sair", "../../index.html", false, true);
 header.renderMenuLinks();
 header.renderDropDownMenu(currentImg);
 
+database.initialization();
+
+const divMessage = document.querySelector(".initial-msg");
+const h3InitialMsg = document.createElement("h3");
+h3InitialMsg.innerText = "As publicações de seus amigos aparecerão aqui";
+
+divMessage.appendChild(h3InitialMsg);
+
 function renderPostCards() {
   const followList = database.currentUserInSession.followList;
 
@@ -31,13 +37,16 @@ function renderPostCards() {
     for (let i = 0; i < followList.length; i++) {
       if (post.idAuthor === followList[i]) {
         const author = database.users.find((user) => user.id === post.idAuthor);
-        console.log(author);
+        h3InitialMsg.classList.add("hide");
 
         new PostCard(post, author.name, author.image);
         const trashButton = document.getElementById(
           `btn-delete-post-${post.idPost}`
         );
-        trashButton.classList.add("hide");
+
+        if (database.currentUserInSession.id !== database.manager.id) {
+          trashButton.classList.add("hide");
+        }
 
         const btnOpenInputComment = document.getElementById(
           `btn-create-comment-${post.idPost}`
@@ -78,7 +87,6 @@ function renderPostCards() {
           const commentMessage = document.getElementById(
             `comment-text-${post.idPost}`
           ).value;
-          console.log(commentMessage);
           const newComment = new Comment(
             database.currentUserInSession.id,
             post.idPost,
@@ -101,6 +109,7 @@ function renderPostCards() {
             renderAllCommentsByIdPost(post.idPost);
           } else {
             allComments.innerText = "";
+
             renderAllCommentsByIdPost(post.idPost);
           }
         });
@@ -117,24 +126,27 @@ function renderAllCommentsByIdPost(idPost) {
       );
       new CommentCardView(comment, author.name, author.image);
 
-      if (document.getElementById(`btn-trash-${comment.idComment}`)) {
-        const btnDelComment = document.getElementById(
-          `btn-trash-${comment.idComment}`
-        );
-
-        btnDelComment.addEventListener(
-          "click",
-          function delCommentByIdComment(event) {
-            const numberId = event.currentTarget.id.split("-")[2];
-            database.removeComment(numberId);
-            const allComments = document.getElementById(
-              `all-comments-${comment.idPost}`
-            );
-            allComments.innerText = "";
-            renderAllCommentsByIdPost(comment.idPost);
-          }
-        );
+      const btnDelComment = document.getElementById(
+        `btn-trash-${comment.idComment}`
+      );
+      if (
+        comment.idAuthor === database.currentUserInSession.id ||
+        database.manager.id === database.currentUserInSession.id
+      ) {
+        btnDelComment.removeAttribute("hidden");
       }
+      btnDelComment.addEventListener(
+        "click",
+        function delCommentByIdComment(event) {
+          const numberId = event.currentTarget.id.split("-")[2];
+          database.removeComment(numberId);
+          const allComments = document.getElementById(
+            `all-comments-${comment.idPost}`
+          );
+          allComments.innerText = "";
+          renderAllCommentsByIdPost(comment.idPost);
+        }
+      );
     }
   });
 }

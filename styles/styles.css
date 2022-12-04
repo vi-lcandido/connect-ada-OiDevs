@@ -23,6 +23,10 @@
   --ff: "Roboto", sans-serif;
 }
 
+h3 {
+  font-weight: 500;
+}
+
 body {
   background-color: var(--bg);
   color: var(--text);
@@ -72,6 +76,10 @@ input {
   padding: 0 0.8rem;
 }
 
+.initial-msg {
+  margin-top: 15px;
+}
+
 input:focus,
 textarea:focus {
   outline: none;
@@ -85,6 +93,20 @@ main {
   animation: top-down 1s ease forwards;
   padding: 2rem 8rem;
   grid-area: content;
+  overflow-y: auto;
+}
+
+main::-webkit-scrollbar {
+  width: 10px;               /* width of the entire scrollbar */
+}
+
+main::-webkit-scrollbar-track {
+  background: var(--bg-secondary);        /* color of the tracking area */
+}
+
+main::-webkit-scrollbar-thumb {
+  background-color: var(--primary);    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
 }
 
 button:hover {
@@ -512,73 +534,6 @@ nav {
   }
 }
 
-@media (max-width: 900px) {
-  main,
-  nav {
-    padding: 2rem 4rem;
-  }
-
-  main#index .logo {
-    display: none;
-  }
-
-  main#index {
-    display: block;
-  }
-
-  #index section {
-    padding: 2rem;
-  }
-}
-
-@media (max-width: 600px) {
-  main,
-  nav {
-    padding: 1rem;
-  }
-  #index .form-wrapper {
-    width: 22rem;
-    padding: 2rem;
-  }
-
-  #logo-text {
-    display: none;
-  }
-
-  .menu {
-    gap: 1rem;
-  }
-
-  .menu img {
-    width: 1.6rem;
-  }
-
-  .dropbtn .user-img {
-    width: 1.6rem;
-    height: 1.6rem;
-  }
-
-  .profileCard {
-    flex-direction: column;
-  }
-
-  .profileText {
-    padding: 15px 32px 15px 0px;
-    align-items: center;
-    text-align: center;
-    min-width: 250px;
-  }
-
-  .profileButton:hover {
-    background-color: var(--secondary);
-    color: var(--white);
-  }
-
-  .profileButton:hover .buttonIcon {
-    filter: contrast(3) brightness(0) invert(1) grayscale(1);
-  }
-}
-
 /* Following */
 
 main#following {
@@ -743,13 +698,16 @@ button:hover {
 .header-post-card {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
 }
 
 .post-card nav {
   padding: 0px;
   display: flex;
   justify-content: space-around;
+}
+
+.post-content, .comment-content {
+  margin-top: 10px;
 }
 
 .profileCard {
@@ -920,11 +878,6 @@ button:hover {
   margin: 10px;
 }
 
-/* .comment-content {
-  min-width: 100px;
-  overflow-wrap: break-word;
-} */
-
 .comment {
   width: 100%;
   margin-left: 16px;
@@ -987,8 +940,7 @@ input#is-adm {
 }
 
 
-
-#adm-explore .align-follow-btn button {
+.delete-user {
   cursor: pointer;
   color: var(--red-danger);
   border: 1px solid var(--red-danger);
@@ -1019,8 +971,7 @@ input#is-adm {
 }
 
 @media (max-width: 900px) {
-  main,
-  nav {
+  main {
     padding: 2rem 4rem;
   }
 
@@ -1038,8 +989,7 @@ input#is-adm {
 }
 
 @media (max-width: 600px) {
-  main,
-  nav {
+  main {
     padding: 1rem;
   }
   #index .form-wrapper {
@@ -1062,6 +1012,26 @@ input#is-adm {
   .dropbtn .user-img {
     width: 1.6rem;
     height: 1.6rem;
+  }
+
+  .profileCard {
+    flex-direction: column;
+  }
+
+  .profileText {
+    padding: 15px 32px 15px 0px;
+    align-items: center;
+    text-align: center;
+    min-width: 250px;
+  }
+
+  .profileButton:hover {
+    background-color: var(--secondary);
+    color: var(--white);
+  }
+
+  .profileButton:hover .buttonIcon {
+    filter: contrast(3) brightness(0) invert(1) grayscale(1);
   }
 }
 

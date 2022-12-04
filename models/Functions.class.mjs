@@ -3,7 +3,6 @@ import database from "./DataBase.class.mjs";
 class Functions {
   static createRandomId = function () {
     return `${this.randomLetter()}${this.randomLetter()}${this.randomLetter()}${this.randomNumber()}${this.randomNumber()}${this.randomNumber()}${this.randomLetter()}${this.randomLetter()}${this.randomNumber()}${this.randomNumber()}${this.randomNumber()}${this.randomLetter()}${this.randomNumber()}${this.randomNumber()}${this.randomNumber()}`;
-    // return Math.floor(Math.random() * 3000);
   };
 
   static randomLetter() {
@@ -20,6 +19,10 @@ class Functions {
 
   static getLocalStorage(key) {
     return JSON.parse(localStorage.getItem(key));
+  }
+
+  static logOff() {
+    this.setLocalStorage('currentUserInSession', {})
   }
 
   constructor() {
