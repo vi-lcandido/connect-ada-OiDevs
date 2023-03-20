@@ -1,49 +1,49 @@
 <h1 align="center">ConnectAda</h1>
 
-<p align="center">Projeto final do módulo 3 - Programação Orientada a objetos do Curso de Front-end OiDevs. </p>
+<p align="center">Final Project of  Third Period from OiDevs Program - Object Oriented Programming. </p>
 
 <p align="center">
-  <a href="#computer-sobre-o-projeto">Sobre o Projeto</a> •
+  <a href="#computer-sobre-o-projeto">About Project</a> •
   <a href="#white_check_mark-features">Features</a> •
-  <a href="#books-como-executar">Como executar</a> •
-  <a href="#hammer-tecnologias">Tecnologias</a> •
-  <a href="#hammer-utilitários">Utilitários</a> •
-   <a href="#rocket-devs">Devs</a> •
+  <a href="#books-como-executar">How to run</a> •
+  <a href="#hammer-tecnologias">Technologies</a> •
+  <a href="#hammer-utilitários">Utilities</a> •
+   <a href="#rocket-devs">Developers</a> •
 </p>
 
 ---
 
-## :computer: Sobre o projeto
+## :computer: About The Project
 
-- O projeto consiste em uma rede social fictícia (ConnectAda) inspirada no linkedin.
-- O principal objetivo do projeto é a criação de um site dinâmico para fins educativos.
+- The project is a fictitious social network (ConnectAda) inspired by linkedin.
+- The main goal of the project is the creation of a dynamic website for educational purposes.
 
 ---
 
 ## :white_check_mark: Features
-- [x] Cadastro e Login;
-- [x] Criar uma postagem;
-- [x] Comentar uma postagem;
-- [x] Adicionar usuários a lista de amigos;
-- [x] Remover usuários a lista de amigos;
-- [x] Usuário administrador capaz de remover usuários;
+- [x] Sign up and Login;
+- [x] Create a post;
+- [x] Be able to comment the post;
+- [x] Add users to the friends list;
+- [x] Remove users from the friends list;
+- [x] Admin user able to remove users;
 
 ---
 
-## :books: Como executar
+## :books: How to run
 
-Para visualizar siga os passos abaixo: 
-- Você deve ter o Git Bash instalado em seu computador (clique <a href="https://git-scm.com/download/win">aqui</a>);
-- Crie uma pasta em seu computador;
-- Abra o Git Bash dentro deste diretório;
-- Utilize o comando "git clone https://github.com/carolferraz/connect-ada-OiDevs.git".
-- Comece a navegação pela página index.html
+To open the project, follow the steps bellow:
+- You must have Git Bash installed in your computer (clique <a href="https://git-scm.com/download/win">here</a>);
+-  Create a folder in your computer;
+- Open Git Bash inside this folder;
+- Type this command "git clone https://github.com/carolferraz/connect-ada-OiDevs.git".
+- Start the navigation from index.html
 
 ---
 
-## :hammer: Tecnologias
+## :hammer: Technologies
 
-Ferramentas utilizadas no desenvolvimento do projeto:
+Tools used to develop this project:
 
 - HTML
 - CSS
@@ -53,15 +53,15 @@ Ferramentas utilizadas no desenvolvimento do projeto:
 
 ---
 
-## :hammer: Utilitários
+## :hammer: Utilities
 
-- Layout do figma: <a href="https://www.figma.com/file/gn1HqPHgIcKFPHh0oxJZ3z/ConnectAda?node-id=0%3A1" >[Figma]</a> 
+- Figma layout: <a href="https://www.figma.com/file/gn1HqPHgIcKFPHh0oxJZ3z/ConnectAda?node-id=0%3A1" >[Figma]</a> 
 
-Obs: O figma desse projeto foi criado pelas próprias desenvolvedoras servindo de base para o desenvolvimento.
+Obs: The Figma project was created by the developers themselves, serving as a basis for the development.
 
 ---
 
-## :rocket: Devs
+## :rocket: Developers
   <p>Amanda Guerra:  <a href="https://github.com/amaendoas">GitHub</a></p>
   <p>Carol Ferraz: <a href="https://github.com/carolferraz">GitHub</b></sub></a><p> 
   <p>Ivina Albuquerque: <a href="https://github.com/Ivina-als">GitHub</b></sub></a><p> 
@@ -71,4 +71,4 @@ Obs: O figma desse projeto foi criado pelas próprias desenvolvedoras servindo d
  
 
 ---
-Desenvolvido com 💜
+Developed with 💜
